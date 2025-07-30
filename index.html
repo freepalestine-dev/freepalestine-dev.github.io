@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hiba’s Birthday Love Story</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&display=swap');
+
+  /* Base Styling */
+  body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background: linear-gradient(135deg, #ffe6f0 0%, #fff6fa 100%);
+    color: #5a2e3e;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Container */
+  .centered {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem 2rem 3rem;
+    box-sizing: border-box;
+  }
+
+  /* Opening Scene */
+  .opening-scene {
+    height: 100vh;
+    background: linear-gradient(135deg, #ffdae1 0%, #ffeef5 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  h1.cursive {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #a83357;
+    text-shadow: 1px 1px 4px #f9c5d1cc;
+    margin-bottom: 0.6rem;
+  }
+
+  .scene-text {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 90%;
+    line-height: 1.5;
+    font-style: italic;
+    color: #7b4c5a;
+  }
+
+  /* Special Moments Scroll */
+  .special-moments {
+    background: #fff0f6;
+    padding: 2.5rem 2rem 5rem;
+    max-width: 720px;
+    margin: 2rem auto 4rem;
+    border-radius: 25px;
+    box-shadow: 0 12px 28px #f9c5d180;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #7b4c5a;
+    line-height: 1.65;
+  }
+
+  .moment {
+    margin-bottom: 3.2rem;
+    background: #fce8ef;
+    padding: 1.8rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px #f9c5d140;
+    transition: background-color 0.3s ease;
+  }
+
+  .moment:hover {
+    background-color: #f9c5d1;
+  }
+
+  /* Love Letter */
+  .love-letter {
+    background: #fff0f6;
+    max-width: 720px;
+    margin: 2rem auto 5rem;
+    padding: 3rem 3rem 3.5rem;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px #f9c5d1cc;
+    font-family: 'Merriweather', serif;
+    font-size: 1.2rem;
+    color: #623645;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    min-height: 320px;
+    position: relative;
+  }
+
+  /* Typewriter Cursor */
+  .cursor {
+    display: inline-block;
+    width: 2.5px;
+    height: 1.3em;
+    background: #a83357;
+    margin-left: 3px;
+    animation: blink 1.1s steps(1) infinite;
+    vertical-align: bottom;
+    border-radius: 2px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Birthday Surprise */
+  .gift-box-container {
+    text-align: center;
+    margin: 4rem 0 6rem;
+  }
+
+  .gift-box {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e86486 0%, #b43a5b 100%);
+    border-radius: 30px 30px 18px 18px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 8px 22px #e8648680;
+    transition: transform 0.35s ease, box-shadow 0.3s ease;
+  }
+
+  .gift-box:hover {
+    transform: scale(1.12);
+    box-shadow: 0 12px 40px #e8648699;
+  }
+
+  .ribbon {
+    position: absolute;
+    background: #ffe5f0;
+    box-shadow: 0 2px 8px #d988a0aa inset;
+  }
+
+  .ribbon.horizontal {
+    top: 68px;
+    left: 0;
+    width: 170px;
+    height: 36px;
+    border-radius: 18px / 10px;
+  }
+
+  .ribbon.vertical {
+    top: 0;
+    left: 68px;
+    width: 36px;
+    height: 170px;
+    border-radius: 10px / 18px;
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #fff9 75%, transparent 75%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px #fff8);
+    animation: sparkleAnim 1.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes sparkleAnim {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.75); }
+  }
+
+  .sparkle:nth-child(1) {
+    top: 22px; left: 46px; animation-delay: 0s;
+  }
+
+  .sparkle:nth-child(2) {
+    top: 98px; left: 108px; animation-delay: 0.6s;
+  }
+
+  .sparkle:nth-child(3) {
+    top: 54px; left: 130px; animation-delay: 1.2s;
+  }
+
+  /* Bouquet */
+  .bouquet {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    background: radial-gradient(circle at center, #ff6384 30%, #8a2a3f 95%);
+    border-radius: 50% 50% 20% 20% / 70% 70% 30% 30%;
+    box-shadow: 0 0 35px #ff638440;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 1.3s ease, transform 1.3s ease;
+  }
+
+  .bouquet.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .bouquet::before {
+    content: "";
+    position: absolute;
+    top: 24px; left: 24px; right: 24px; bottom: 24px;
+    background: repeating-radial-gradient(circle at center, #ffb6c1 11%, #ff6384 22%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px #ff6384bb);
+  }
+
+  /* Pop-up messages on sides */
+  .popup-message {
+    position: fixed;
+    top: 30%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #a83357;
+    background: #fff0f6cc;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px #f9c5d180;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 1s ease;
+  }
+
+  .popup-left {
+    left: 12px;
+  }
+  .popup-right {
+    right: 12px;
+  }
+
+  .popup-show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* New Chapter Section */
+  #new-chapter {
+    max-width: 720px;
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+    background: #ffe9f2cc;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px #f9c5d1cc;
+    font-family: 'Merriweather', serif;
+    color: #923d5a;
+    opacity: 0;
+    transition: opacity 2s ease;
+  }
+
+  #new-chapter.show {
+    opacity: 1;
+  }
+
+  #new-chapter h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #new-chapter p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .centered {
+      padding: 1rem 1.2rem 3rem;
+      max-width: 95%;
+    }
+    .scene, .special-moments, .love-letter {
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+    }
+    h1.cursive {
+      font-size: 2.2rem;
+    }
+    #new-chapter {
+      padding: 1.5rem 2rem;
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Opening Scene -->
+<section class="opening-scene" role="main" aria-label="Opening scene">
+  <h1 class="cursive" id="opening-text" aria-live="polite"></h1>
+</section>
+
+<!-- Special Moments Scroll -->
+<section class="special-moments centered" aria-label="Special moments" style="display:none;">
+  <div class="moment" id="moment1"></div>
+  <div class="moment" id="moment2"></div>
+  <div class="moment" id="moment3"></div>
+</section>
+
+<!-- Love Letter -->
+<section class="love-letter centered" aria-label="Love letter" id="love-letter" style="display:none;"></section>
+
+<!-- Birthday Surprise -->
+<section class="gift-box-container" aria-label="Birthday surprise" style="display:none;">
+  <div class="gift-box" id="gift-box" tabindex="0" role="button" aria-pressed="false" aria-label="Open birthday gift box">
+    <div class="ribbon horizontal"></div>
+    <div class="ribbon vertical"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+  </div>
+  <div class="bouquet" id="bouquet" aria-hidden="true" aria-label="Animated bouquet"></div>
+  <div class="final-message" id="final-message" style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #a83357; margin-top: 1.8rem; opacity: 0; transition: opacity 1.5s ease;"></div>
+</section>
+
+<!-- New Chapter -->
+<section id="new-chapter" aria-label="New chapter" style="display:none;">
+  <h2>A New Chapter Begins...</h2>
+  <p>
+    With every heartbeat, we turn the page to a future filled with dreams fulfilled, laughter shared, and love deeper than ever before.<br><br>
+    Here’s to all the new memories waiting to be written — hand in hand, side by side, forever us.
+  </p>
+</section>
+
+<!-- Pop-up messages -->
+<div class="popup-message popup-left" id="popup-left" aria-hidden="true" role="alert">You’re beautiful</div>
+<div class="popup-message popup-right" id="popup-right" aria-hidden="true" role="alert">You’re perfect, my dear</div>
+<div class="popup-message popup-left" id="popup-name" aria-hidden="true" role="alert">Haitam</div>
+
+<!-- Background Music -->
+<audio id="bg-music" src="https://d500.d2mefast.net/tb/5/f0/ed_sheeran_perfect_lyrics_mp3_52520.mp3" loop preload="auto"></audio>
+
+<script>
+  const openingText = "To the one who made my life feel like a love story… Hiba.";
+  const specialMoments = [
+    "That hug wasn’t just warmth — it was home.",
+    "You were my calm in chaos, the voice I wanted to hear until the end of time.",
+    "In that classroom, I wasn’t just learning subjects. I was learning how to love you."
+  ];
+  const loveLetterText = `To Hiba, My Heart’s Favorite Chapter
+
+Hiba,
+You’ve always been more than just my classmate.
+You’re the girl who turned every ordinary moment into something unforgettable.
+From the first time we talked, I felt something rare — something real.
+Our first hug? It wasn’t just physical. It was like my soul finally found its home.
+
+The nights we spent talking, laughing, dreaming...
+I cherish them like a secret treasure.
+And every second we spent in that classroom —
+you sitting near me, your voice in the air, your smile like light —
+I didn’t just learn lessons from books.
+I learned how it feels to fall for someone truly.
+
+You made me feel seen. Heard. Loved.
+You’re not just part of my life. You’re the reason my life feels like a love story.
+And today, on your birthday, I just want to say:
+
+You are my peace in chaos, my joy in silence,
+and my reason for dreaming bigger every day.
+
+I love you, Hiba.
+Happy Birthday — may this year give you everything you deserve,
+and may I always be there to remind you just how deeply you are loved.
+
+Always yours,
+Haitam`;
+
+  // Elements
+  const openingTextEl = document.getElementById('opening-text');
+  const specialMomentsSection = document.querySelector('.special-moments');
+  const momentEls = [
+    document.getElementById('moment1'),
+    document.getElementById('moment2'),
+    document.getElementById('moment3')
+  ];
+  const loveLetterEl = document.getElementById('love-letter');
+  const giftBoxContainer = document.querySelector('.gift-box-container');
+  const giftBox = document.getElementById('gift-box');
+  const bouquet = document.getElementById('bouquet');
+  const finalMessage = document.getElementById('final-message');
+  const newChapter = document.getElementById('new-chapter');
+  const popupLeft = document.getElementById('popup-left');
+  const popupRight = document.getElementById('popup-right');
+  const popupName = document.getElementById('popup-name');
+  const bgMusic = document.getElementById('bg-music');
+
+  let giftOpened = false;
+
+  // Type text helper
+  function typeText(text, element, delay=40, callback) {
+    let i = 0;
+    element.textContent = '';
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, delay);
+      } else if (callback) callback();
+    }
+    type();
+  }
+
+  // Show opening scene typing
+  function startOpening() {
+    typeText(openingText, openingTextEl, 80, () => {
+      setTimeout(showSpecialMoments, 1800);
+    });
+  }
+
+  // Show special moments one by one
+  let momentIndex = 0;
+  function showSpecialMoments() {
+    document.querySelector('.opening-scene').style.display = 'none';
+    specialMomentsSection.style.display = 'block';
+    showMoment();
+  }
+  function showMoment() {
+    if (momentIndex < specialMoments.length) {
+      const el = momentEls[momentIndex];
+      el.textContent = specialMoments[momentIndex];
+      setTimeout(() => {
+        momentIndex++;
+        showMoment();
+      }, 7000);
+    } else {
+      setTimeout(showLoveLetter, 1500);
+    }
+  }
+
+  // Show love letter typing
+  function showLoveLetter() {
+    specialMomentsSection.style.display = 'none';
+    loveLetterEl.style.display = 'block';
+    typeText(loveLetterText, loveLetterEl, 25, () => {
+      setTimeout(() => {
+        loveLetterEl.style.opacity = 1;
+        showGiftBox();
+      }, 700);
+    });
+  }
+
+  // Show gift box
+  function showGiftBox() {
+    giftBoxContainer.style.display = 'block';
+    finalMessage.style.opacity = 0;
+  }
+
+  // Popup message sequence
+  const popups = [
+    {el: popupLeft, text: "You’re beautiful", delay: 0},
+    {el: popupRight, text: "You’re perfect, my dear", delay: 4000},
+    {el: popupName, text: "Haitam", delay: 8000}
+  ];
+
+  function showPopupMessage(index=0) {
+    if (index >= popups.length) return;
+    const popup = popups[index];
+    popup.el.setAttribute('aria-hidden', 'false');
+    popup.el.classList.add('popup-show');
+    setTimeout(() => {
+      popup.el.classList.remove('popup-show');
+      popup.el.setAttribute('aria-hidden', 'true');
+      setTimeout(() => {
+        showPopupMessage(index + 1);
+      }, 1200);
+    }, 3000);
+  }
+
+  // Gift box interaction
+  giftBox.addEventListener('click', openGift);
+  giftBox.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openGift();
+    }
+  });
+
+  function openGift() {
+    if (giftOpened) return;
+    giftOpened = true;
+    giftBox.setAttribute('aria-pressed', 'true');
+    giftBox.style.display = 'none';
+    bouquet.classList.add('show');
+    bouquet.setAttribute('aria-hidden', 'false');
+    finalMessage.textContent = "May your birthday be as beautiful as your soul. I love you, Hiba.";
+    finalMessage.style.opacity = 1;
+
+    showPopupMessage(0);
+
+    // After 10 seconds, fade bouquet & message out, then show new chapter
+    setTimeout(() => {
+      bouquet.classList.remove('show');
+      finalMessage.style.opacity = 0;
+
+      setTimeout(() => {
+        bouquet.style.display = 'none';
+        finalMessage.style.display = 'none';
+        newChapter.style.display = 'block';
+
+        // Trigger fade-in
+        setTimeout(() => {
+          newChapter.classList.add('show');
+        }, 50);
+
+      }, 1500);
+    }, 10000);
+  }
+
+  // Floating flowers and gifts animation
+  function createFloatingElement(src, size=40, xPercent=0, yStart=-60, duration=12000) {
+    const el = document.createElement('img');
+    el.src = src;
+    el.style.position = 'fixed';
+    el.style.bottom = yStart + 'px';
+    el.style.left = xPercent + 'vw';
+    el.style.width = size + 'px';
+    el.style.pointerEvents = 'none';
+    el.style.opacity = 0.8;
+    el.style.filter = 'drop-shadow(0 0 2px #f48)';
+    el.style.userSelect = 'none';
+    document.body.appendChild(el);
+
+    let start = null;
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      let progress = timestamp - start;
+      const totalY = window.innerHeight + 120;
+      const posY = yStart + (progress / duration) * totalY;
+      const waveX = 20 * Math.sin(progress / 600);
+      el.style.bottom = posY + 'px';
+      el.style.left = (xPercent + waveX/10) + 'vw';
+
+      if (progress < duration) {
+        requestAnimationFrame(animate);
+      } else {
+        el.remove();
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  // Spawn floating flowers and gifts every 2.2 seconds while letter or bouquet is visible
+  function spawnFloating() {
+    if (loveLetterEl.style.display === 'block' || bouquet.classList.contains('show')) {
+      const flowerSrc = 'https://cdn-icons-png.flaticon.com/512/616/616408.png'; // small pink flower icon
+      const giftSrc = 'https://cdn-icons-png.flaticon.com/512/535/535239.png'; // small gift icon
+
+      const x1 = Math.random() * 80 + 10;
+      const x2 = Math.random() * 80 + 10;
+      createFloatingElement(flowerSrc, 30, x1, -60, 13000);
+      createFloatingElement(giftSrc, 35, x2, -70, 15000);
+    }
+  }
+  setInterval(spawnFloating, 2200);
+
+  // Background music play on user interaction
+  document.body.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play().catch(() => {});
+    }
+  }, {once:true});
+
+  // Start everything
+  window.onload = () => {
+    startOpening();
+  };
+</script>
+
+</body>
+</html>
